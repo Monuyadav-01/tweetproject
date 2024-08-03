@@ -1,0 +1,41 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'layout.css' %}">
+ {% block css %}
+ 
+ {% endblock %}
+  <title>
+    {% block title %}Tweet{% endblock %}
+  </title>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-logo">
+        <a href="#">TweetWeb</a>
+    </div>
+    <ul class="navbar-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Tweet</a></li>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="#">Messages</a></li>
+    </ul>
+    <div class="navbar-search">
+        <input type="text" placeholder="Search...">
+    </div>
+    <div class="navbar-actions">
+        <a href="#" class="login-btn">Login</a>
+        <a href="#" class="register-btn">Register</a>
+    </div>
+</nav>
+<div class="container">
+  {% block content %}
+  
+  {% endblock  %}
+</div>
+</body>
+</html>

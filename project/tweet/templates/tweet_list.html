@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'tweet_list.css' %}">
+{% endblock %}
+
+{% block title %}
+Tweet List
+{% endblock %}
+
+{% block content %}
+<!-- New Tweet Button -->
+<button class="new-tweet-btn"><a href="{% url 'tweet_create' %}">ADD TWEET</a></button>
+
+<!-- Tweet Card Container -->
+<div class="tweet-container">
+    <!-- Tweet Card Example -->
+    {% for tweet in tweets %}
+    <div class="tweet-card">
+        <div class="tweet-header">
+            
+            <div class="user-info">
+                <h3 class="username">{{ tweet.user.username }}</h3>
+                <p class="handle">@{{ tweet.user.username }}</p>
+            </div>
+        </div>
+        <div class="tweet-content">
+             <img src="{{ tweet.photo.url }}" alt="photo" class="profile-pic">
+            <p>{{ tweet.text }}</p>
+        </div>
+        <div class="tweet-footer">
+            <span class="tweet-timestamp">{{ tweet.created_at }}</span>
+            <div class="tweet-actions">
+                <button class="action-btn"><a href="{% url 'tweet_edit' tweet.id %}" class="edit">Edit</a></button>
+                <button class="action-btn"><a href="{% url 'tweet_delete' tweet.id %}" class="delete">Delete</a></button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

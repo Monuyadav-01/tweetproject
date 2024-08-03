@@ -1,0 +1,169 @@
+/* Define CSS Variables */
+:root {
+  --primary-color: #1da1f2;
+  --hover-color: #0d8cdc;
+  --bg-color: #cbcfd1;
+  --text-color: #14171a;
+  --subtext-color: #657786;
+  --border-color: #e1e8ed;
+  --delete-color: #e0245e;
+  --delete-hover-color: #c81e4a;
+  --white: #ffffff;
+}
+
+/* General Styles */
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* New Tweet Button */
+.new-tweet-btn {
+  display: block;
+  width: 160px;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.new-tweet-btn a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #cbcfd1;
+}
+
+.new-tweet-btn:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+/* Tweet Card Styles */
+.tweet-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tweet-card {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+.tweet-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.tweet-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-right: 10px;
+  border: 1px solid var(--border-color);
+  object-fit: cover;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.handle {
+  margin: 0;
+  color: var(--subtext-color);
+  font-size: 14px;
+}
+
+.tweet-content {
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-color);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.tweet-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.tweet-timestamp {
+  color: var(--subtext-color);
+  font-size: 14px;
+}
+
+.tweet-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s;
+}
+
+.action-btn a {
+  text-decoration: none;
+  color: inherit;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.action-btn a.edit {
+  background-color: var(--primary-color);
+  color: var(--white);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.action-btn a.edit:hover {
+  background-color: var(--hover-color);
+  transform: scale(1.1);
+}
+
+.action-btn a.delete {
+  background-color: var(--delete-color);
+  color: var(--white);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.action-btn a.delete:hover {
+  background-color: var(--delete-hover-color);
+  transform: scale(1.1);
+}
